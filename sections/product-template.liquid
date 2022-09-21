@@ -52,7 +52,7 @@
         {% capture product_image_size %}{{ height }}x{% endcapture %}
         <img src="{{ featured_media | img_url: product_image_size, scale: product_image_scale }}"
           alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media"
-          style="max-width: {{ height }}px;">
+          style="max-width: '{{ height }}px;'">
       </noscript>
 
       {% assign first_3d_model = product.media | where: "media_type", "model" | first %}
@@ -251,8 +251,7 @@
 
 
             {% else %}
-            <a data-add-to-cart class="btn product-form__cart-submit" href="{{affiliateLink[1]}}" target="blank">See On
-              Amazon</a>
+            <a data-add-to-cart class="btn product-form__cart-submit" href="{{affiliateLink[1]}}" target="blank">{{'customizations.affiliate_page.amazon_btn' | t}}</a>
             {% endunless %}
 
           </div>
@@ -416,54 +415,7 @@
 "zh-CN": "显示动态结账按钮",
 "zh-TW": "顯示動態結帳按鈕"
 },
-"info": {
-"cs": "Každý zákazník uvidí platební metodu, kterou ze všech metod dostupných v obchodě (například PayPal nebo Apple
-Pay) nejvíce preferuje. [Další
-informace](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"da": "Den enkelte kunde vil se sin foretrukne betalingsmetode blandt dem, der er tilgængelige i din butik, f.eks.
-PayPal eller Apple Pay. [Få mere at
-vide](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"de": "Jeder Kunde sieht seine bevorzugte Zahlungsmethode aus den in deinem Shop verfügbaren Zahlungsmethoden wie PayPal
-oder Apple Pay. [Mehr Informationen](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"en": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple
-Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"es": "Cada cliente verá su forma de pago preferida entre las disponibles en tu tienda, como PayPal o Apple Pay. [Más
-información](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"fi": "Kukin asiakas näkee ensisijaisen valintansa kauppasi tarjoamista maksutavoista, esim. PayPal tai Apple Pay.
-[Lisätietoja](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"fr": "Chaque client verra son moyen de paiement préféré parmi ceux qui sont proposés sur votre boutique, tels que
-PayPal ou Apple Pay. [En savoir plus](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"it": "Ogni cliente vedrà il suo metodo di pagamento preferito tra quelli disponibili nel tuo negozio, come PayPal o
-Apple Pay. [Maggiori informazioni](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"ja": "PayPalやApple
-Payなど、ストアで利用可能な希望の決済方法がお客様に表示されます。[詳しくはこちら](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"ko": "각 고객은 PayPal 또는 Apple Pay와 같이 스토어에서 사용 가능한 지불 방법을 확인할 수 있습니다. [자세히
-알아보기](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"nb": "Hver enkelt kunde vil se sin foretrukne betalingsmåte blant de som er tilgjengelig i butikken din, som PayPal
-eller Apple Pay. [Finn ut mer](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"nl": "Elke klant ziet zijn of haar beschikbare voorkeursmethode om af te rekenen, zoals PayPal of Apple Pay. [Meer
-informatie](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"pl": "Każdy klient zobaczy swoją preferowaną metodę płatności wśród metod dostępnych w Twoim sklepie, np. PayPal lub
-Apple Pay. [Dowiedz się więcej](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"pt-BR": "Cada cliente verá a forma de pagamento preferencial dele dentre as disponíveis na loja, como PayPal ou Apple
-Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"pt-PT": "Cada cliente irá ver o seu método de pagamento preferido entre os disponíveis na loja, como o PayPal ou Apple
-Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"sv": "Varje kund kommer att se den föredragna betalningsmetoden från de som finns tillgängliga i din butik, till
-exempel PayPal eller Apple Pay. [Läs
-mer](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"th": "ลูกค้าแต่ละรายจะเห็นวิธีการชำระเงินที่ต้องการจากวิธีที่ใช้ได้ในร้านค้าของคุณ เช่น PayPal หรือ Apple Pay
-[ดูข้อมูลเพิ่มเติม](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"tr": "Her müşteri, mağazanız sunulanlar arasından tercih ettikleri ödeme yöntemini görür (ör. PayPal veya Apple Pay).
-[Daha fazla bilgi edinin](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"vi": "Mỗi khách hàng sẽ thấy phương thức thanh toán ưu tiên trong những phương thức thanh toán được hỗ trợ tại cửa hàng
-như PayPal hoặc Apple Pay. [Tìm hiểu
-thêm](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"zh-CN": "每位客户都可在您商店提供的付款方式中看到他们的首选付款方式，例如 PayPal 或 Apple
-Pay。[了解详细信息](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-"zh-TW": "每位顧客都可以在您商店內開放使用的付款方式中看見他們偏好使用的方式，如 PayPal、Apple Pay
-等。[深入瞭解](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
-},
+
 "default": true
 },
 {
