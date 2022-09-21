@@ -25,19 +25,15 @@
     </div>
   </div>
 
-  <div class="grid grid--half-gutters">
-    <div class="grid__item medium-up--one-half">
       <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
       <input type="tel" id="{{ formId }}-phone" name="contact[{{ 'contact.form.phone' | t }}]" pattern="[0-9\-]*"
         value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
-    </div>
+
     {% if section.settings.isOrderNumberEnabled %}
-    <div class="grid__item medium-up--one-half">
+    
       <label for="{{ formId }}-order-number">Order Number</label>
       <input type="text" id="{{ formId }}-order-number" name="contact[order number]" />
-    </div>
     {% endif %}
-  </div>
 
 
 
