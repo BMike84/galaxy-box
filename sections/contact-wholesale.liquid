@@ -27,20 +27,28 @@
 
   <div class="grid grid--half-gutters">
     <div class="grid__item medium-up--one-half">
-      <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
-      <input type="tel" id="{{ formId }}-phone" name="contact[{{ 'contact.form.phone' | t }}]" pattern="[0-9\-]*"
-        value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+      <label for="{{ formId }}-business-name">Business Name</label>
+      <input type="text" id="{{ formId }}-business-name" name="contact[Business Name]">
     </div>
-    {% if section.settings.isOrderNumberEnabled %}
     <div class="grid__item medium-up--one-half">
-      <label for="{{ formId }}-order-number">Order Number</label>
-      <input type="text" id="{{ formId }}-order-number" name="contact[order number]" />
+      <label for="{{ formId }}-website">Website</label>
+      <input type="text" id="{{ formId }}-website" name="contact[Website]">
     </div>
-    {% endif %}
   </div>
+  
+  {% unless section.settings.business-types == blank %}
+  {% assign business-types = section.settings.business-types | split: ','  %}
+    <label for="{{ formId }}-business-type">Type of Business</label>
+    <select id="{{ formId }}-business-type" name="contact[Type of Business]">
+      {% for type in business-types %}
+        <option value="{{type}}">{{type}}</option>
+      {% endfor %}
+    </select>
+  {% endunless %}
 
-
-
+  <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
+  <input type="tel" id="{{ formId }}-phone" name="contact[{{ 'contact.form.phone' | t }}]" pattern="[0-9\-]*"
+    value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
 
   <label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
   <textarea rows="10" id="{{ formId }}-message"
@@ -56,11 +64,11 @@
 {
 "name": "contact form",
 "settings": [
-{
-"type": "checkbox",
-"id": "isOrderNumberEnabled",
-"label": "enable order number"
-}
+  {
+    "type": "text",
+    "label": "Business Types (Comma-serpator)",
+    "id": "business-types"
+  }
 ]
 }
 {% endschema %}
